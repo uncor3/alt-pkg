@@ -71,7 +71,7 @@ const handleClick = async () => {
 };
 
 const { parent } = useDragAndDrop(list, {
-  onDragEnd: async (event) => {
+  onDragEnd: async () => {
     await setList(list.value);
   },
 });
