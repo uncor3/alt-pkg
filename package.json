@@ -1,0 +1,31 @@
+{
+  "name": "alt-pkg",
+  "description": "manifest.json description",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "vue-tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@wxt-dev/auto-icons": "^1.0.2",
+    "vue": "^3.5.12",
+    "vue-draggable-next": "^2.2.1",
+    "vue-fluid-dnd": "^0.13.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "@wxt-dev/module-vue": "^1.0.1",
+    "sass": "^1.86.0",
+    "typescript": "5.6.3",
+    "vue-tsc": "^2.1.10",
+    "wxt": "^0.19.29"
+  }
+}
