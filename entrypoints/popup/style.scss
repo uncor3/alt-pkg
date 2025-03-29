@@ -130,6 +130,9 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   justify-items: left;
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 /* .parent */
