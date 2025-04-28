@@ -3,25 +3,40 @@
     <h1 class="app-logo">AltPkg</h1>
     <div class="reset-btn">
       <button @click="handleClick">
-        <SystemUiconsReset />
         Reset
+        <SystemUiconsReset />
       </button>
     </div>
   </div>
   <div class="pkg-header">
+    <Transition name="fade">
+      <div class="refresh-warning" v-if="changed">
+        <p>
+          Please refresh any open npmjs.com tabs for the changes to take effect.
+        </p>
+      </div>
+    </Transition>
+
     <p>Manager</p>
     <p>Command</p>
   </div>
   <ul ref="parent">
+    <div v-if="!list.length">
+      <p>Are you sure?</p>
+      <p>
+        This extension removes the default install command, which means you now
+        have no commands on npmjs.com.
+      </p>
+    </div>
     <li class="pkg" v-for="(element, index) in list" :index="index">
       <div>
         <GrabIcon />
       </div>
-      <div class="pkg-manager">
-        <input type="text" v-model="element.name" />
+      <div class="pkg-text">
+        <span>{{ element.name }}</span>
       </div>
-      <div class="pkg-command">
-        <input type="text" v-model="element.command" />
+      <div class="pkg-text">
+        <span>{{ element.command }}</span>
       </div>
       <div @click="deleteItem(index)" class="trash-bin"><TrashBin /></div>
     </li>
@@ -59,9 +74,22 @@ import GrabIcon from '@/components/icons/GrabIcon.vue';
 import TrashBin from '@/components/icons/TrashBin.vue';
 import { PkgManager } from '@/entrypoints/popup/types';
 const list = ref<PkgManager[]>([]);
+const changed = ref(false);
+
+let timeout: NodeJS.Timeout;
+const warnToRefresh = () => {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+  changed.value = true;
+  timeout = setTimeout(() => {
+    changed.value = false;
+  }, 5000);
+};
 
 onMounted(async () => {
   list.value = await getList();
+  watch(() => JSON.stringify(list.value), warnToRefresh);
 });
 
 const newManager = ref({ name: '', command: '' });
@@ -91,3 +119,15 @@ const deleteItem = async (index: number) => {
   await setList(list.value);
 };
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
