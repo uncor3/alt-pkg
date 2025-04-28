@@ -1,6 +1,9 @@
 <template>
   <div class="app-header">
-    <h1 class="app-logo">AltPkg</h1>
+    <h1 class="app-logo">
+      <AltPkgIcon />
+      <span> AltPkg </span>
+    </h1>
     <div class="reset-btn">
       <button @click="handleClick">
         Reset
@@ -43,23 +46,19 @@
   </ul>
 
   <form @submit="handleAdd" class="add-form">
-    <div class="pkg">
-      <div class="pkg-manager">
-        <input
-          type="text"
-          placeholder="Manager"
-          v-model="newManager.name"
-          required
-        />
-      </div>
-      <div class="pkg-command">
-        <input
-          type="text"
-          placeholder="Command"
-          v-model="newManager.command"
-          required
-        />
-      </div>
+    <div class="form-fields">
+      <input
+        type="text"
+        placeholder="Manager"
+        v-model="newManager.name"
+        required
+      />
+      <input
+        type="text"
+        placeholder="Command"
+        v-model="newManager.command"
+        required
+      />
     </div>
     <button type="submit">Add</button>
   </form>
@@ -73,6 +72,7 @@ import SystemUiconsReset from '@/components/icons/SystemUiconsReset.vue';
 import GrabIcon from '@/components/icons/GrabIcon.vue';
 import TrashBin from '@/components/icons/TrashBin.vue';
 import { PkgManager } from '@/entrypoints/popup/types';
+import AltPkgIcon from './icons/AltPkgIcon.vue';
 const list = ref<PkgManager[]>([]);
 const changed = ref(false);
 

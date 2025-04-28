@@ -25,7 +25,7 @@ a:hover {
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 370px;
 }
 
 h1 {
@@ -59,25 +59,11 @@ button:focus-visible {
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 .pkg {
   display: flex;
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  max-width: 250px;
 
   input {
     border: none;
@@ -107,9 +93,25 @@ button:focus-visible {
 
 .add-form {
   padding: 1rem;
-  & > .pkg {
+
+  input {
+    border: none;
+    background: inherit;
+    max-width: 75px;
+  }
+
+  & > .form-fields {
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
     margin-bottom: 1rem;
     border: 1px solid #c1c4fa;
+    border-radius: 1rem;
+    padding: 0.5rem;
   }
 }
 
@@ -117,7 +119,7 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 30%;
   padding: 0.5rem;
   border-bottom: 1px solid #c1c4fa;
   position: relative;
@@ -153,7 +155,6 @@ ul ref="parent" will get the class droppable
 }
 
 .refresh-warning {
-  /* yellow */
   position: absolute;
   color: #f6a600;
   font-size: 0.8rem;
@@ -163,4 +164,18 @@ ul ref="parent" will get the class droppable
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
