@@ -4,12 +4,17 @@ import { defineConfig } from 'wxt';
 export default defineConfig({
   extensionApi: 'chrome',
   modules: ['@wxt-dev/module-vue', '@wxt-dev/auto-icons'],
-  manifest: ({ browser, manifestVersion, mode, command }) => {
+  manifest: ({ browser }) => {
     return {
       permissions: ['storage'],
-      author: 'contactuncor3@gmail.com',
+      author:
+        browser === 'firefox'
+          ? 'Uncore'
+          : {
+              email: 'contactuncor3@gmail.com',
+            },
       description:
-        'A free and open-source extension to change the default package manager command on npmjs.com',
+        'A free and open-source extension to change the default install command on npmjs.com',
       short_name: 'AltPkg',
       name: 'AltPkg',
       version: '1.0.0',

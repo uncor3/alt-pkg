@@ -1,8 +1,8 @@
 {
   "name": "alt-pkg",
-  "description": "manifest.json description",
+  "description": "A free and open-source extension to change the default install command on npmjs.com",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
