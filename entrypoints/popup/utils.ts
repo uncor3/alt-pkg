@@ -5,8 +5,7 @@ import { PkgManager } from './types';
 export async function getList(): Promise<PkgManager[]> {
   const listExists = await storage.getItem<string>('local:list');
   if (!listExists) {
-    await storage.setItem('local:list', JSON.stringify(DEFAULTS));
-    return DEFAULTS;
+    return await setDefaultList();
   }
   return JSON.parse(listExists);
 }
