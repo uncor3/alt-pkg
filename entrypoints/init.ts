@@ -1,13 +1,13 @@
 import { getList } from './popup/utils';
 
 async function init(prevElement: HTMLElement) {
+  const pkgManagers = await getList();
   const elementToClone = prevElement.nextSibling as HTMLElement;
   elementToClone.remove();
 
   prevElement
     .parentElement!.querySelectorAll('[alt-pkg]')
     .forEach((_) => _.remove());
-  const pkgManagers = await getList();
 
   const pkgName = getPackageName();
   const parentOfPrevElement = prevElement.parentElement;
