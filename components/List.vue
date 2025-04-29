@@ -87,7 +87,7 @@ const warnToRefresh = () => {
   }, 5000);
 };
 
-onMounted(async () => {
+onBeforeMount(async () => {
   list.value = await getList();
   watch(() => JSON.stringify(list.value), warnToRefresh);
 });
