@@ -1,17 +1,18 @@
 import { getList } from './popup/utils';
 
-async function init(elementToClone: HTMLElement) {
-  elementToClone
-    .parentElement!.querySelectorAll('[alt-pkg]')
-    .forEach((_, i) => {
-      if (i === 0) return;
-      _.remove();
-    });
-  const pkgManagers = await getList();
-  const pkgName = getPackageName();
-  const elementToCopyParent = elementToClone.parentElement;
-  const nextSibling = elementToClone.nextSibling;
+async function init(prevElement: HTMLElement) {
+  const elementToClone = prevElement.nextSibling as HTMLElement;
   elementToClone.remove();
+
+  prevElement
+    .parentElement!.querySelectorAll('[alt-pkg]')
+    .forEach((_) => _.remove());
+  const pkgManagers = await getList();
+
+  const pkgName = getPackageName();
+  const parentOfPrevElement = prevElement.parentElement;
+
+  let nextSibling = prevElement.nextSibling;
 
   for (const manager of pkgManagers) {
     const newClone = elementToClone.cloneNode(true) as HTMLElement;
@@ -22,9 +23,9 @@ async function init(elementToClone: HTMLElement) {
 
     const text = `${manager.name} ${manager.command} ${pkgName}`;
     btn.addEventListener('click', () => copyToClipboard(newClone, text));
-
     code.textContent = text;
-    elementToCopyParent!.insertBefore(newClone, nextSibling);
+    parentOfPrevElement!.insertBefore(newClone, nextSibling);
+    nextSibling = newClone.nextSibling;
   }
 }
 
@@ -56,7 +57,7 @@ function highlightElement(element: HTMLElement, error?: Error) {
     elm.textContent = 'Error copying!';
     console.error(error);
   } else {
-    elm.style.backgroundColor = 'rgb(0, 255, 0, 0.5)';
+    elm.style.backgroundColor = 'rgb(0, 255, 0, 0.75)';
     elm.textContent = 'Copied!';
   }
   element.appendChild(elm);

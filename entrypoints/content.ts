@@ -10,20 +10,18 @@ export default defineContentScript({
       onMount: () => {
         const mainContainer = document.querySelector('main > div');
         const handler = () => {
-          const div = mainContainer?.children[3].querySelector('h3 + *');
+          const div = mainContainer?.children[3].querySelector('h3');
           if (div) {
             init(div as HTMLElement);
           }
         };
 
-        //check the layout of the page
-        if (mainContainer && mainContainer.children.length == 4) {
+        if (mainContainer) {
           handler();
 
-          // window.addEventListener('popstate', handler);
           //react-router does not fire events like popstate,pushstate so navigation events do not work
           //use a mutation observer instead
-          const observer = new MutationObserver((e) => {
+          const observer = new MutationObserver(() => {
             handler();
           });
 
