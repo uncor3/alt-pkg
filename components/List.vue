@@ -4,12 +4,10 @@
       <AltPkgIcon />
       <span> AltPkg </span>
     </h1>
-    <div class="reset-btn">
-      <button @click="handleClick">
-        Reset
-        <SystemUiconsReset />
-      </button>
-    </div>
+    <button class="reset-btn" @click="handleClick">
+      Reset
+      <SystemUiconsReset />
+    </button>
   </div>
   <div class="pkg-header">
     <Transition name="fade">

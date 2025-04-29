@@ -82,8 +82,11 @@ button:focus-visible {
 
 .reset-btn {
   display: flex;
+  max-height: fit-content;
+  margin: auto 0;
+  gap: 0.5rem;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
 }
 
 .trash-bin {
