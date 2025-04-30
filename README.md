@@ -1,6 +1,6 @@
 <div align="center">
     <img width='100px' src="assets/icon.png" alt="AltPkg showcase" >
-    <h1>AltPkg</h1>
+    <div style='font-size:2rem'>AltPkg</div>
 </div>
 
 ## What is this?
