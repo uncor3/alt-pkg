@@ -1,9 +1,6 @@
-<div style="display: flex; align-items: center; justify-content: center;
-flex-direction: column;
-gap: 10px;">
+<div align="center">
     <img width='100px' src="assets/icon.png" alt="AltPkg showcase" >
     <h1>AltPkg</h1>
-
 </div>
 
 ## What is this?
