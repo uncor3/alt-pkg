@@ -34,20 +34,10 @@ jobs:
             mv "$file" dist
           done
 
-      - name: release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-          draft: false
-          prerelease: false
-          tag_name: ${{ github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: upload artifact
+      - name: Upload release
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           files: |
-            ${{ github.workspace }}/dist/*
+            ${{ github.workspace }}/packages/*
