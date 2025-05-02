@@ -40,4 +40,4 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           files: |
-            ${{ github.workspace }}/packages/*
+            ./dist/*
