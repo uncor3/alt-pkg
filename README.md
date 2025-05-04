@@ -37,12 +37,12 @@ Available on major browsers:
 
 <div style="display: flex; flex-direction: column; gap: 10px;">
 
-  <a href="https://chromewebstore.google.com/detail/altpkg/cgjeekneffphannbnehljdbbbfepojcl" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <a target="_blank" href="https://chromewebstore.google.com/detail/altpkg/cgjeekneffphannbnehljdbbbfepojcl" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
     <img src="repo/gc.png" width="50px" alt="Chrome">
     Chrome Web Store
   </a>
 
-  <a href="https://addons.mozilla.org/en-US/firefox/addon/altpkg" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/altpkg" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
     <img src="repo/firefox.png" width="50px" alt="Firefox">
     Firefox Add-ons
   </a>
