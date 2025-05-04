@@ -7,12 +7,16 @@
 
 This is a browser extension that allows you to customize the `npm install` command on npmjs.com
 
-# WAITING FOR APPROVAL ON EXTENSION STORES
-
-Until then, you can build the extension from source and load it unpacked in your browser. I will update this README once the extension is approved on the stores.
-
 <div>
     <img src="repo/showcase-gh.jpg" alt="AltPkg showcase" >
+</div>
+
+### Check out a 2 min video covering the project
+
+<div align="center">
+    <a href="https://www.youtube.com/watch?v=qM9O3n39gVM">
+        <img src="https://img.youtube.com/vi/qM9O3n39gVM/0.jpg" width="500px" />
+    </a>
 </div>
 
 ## Features
@@ -33,22 +37,26 @@ Available on major browsers:
 
 <div style="display: flex; flex-direction: column; gap: 10px;">
 
-  <a href="https://chrome.google.com/webstore/detail/npm-install-customizer/nhjgjjgjjgjgjgjgjgjgjgjg" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <a href="https://chromewebstore.google.com/detail/altpkg/cgjeekneffphannbnehljdbbbfepojcl" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
     <img src="repo/gc.png" width="50px" alt="Chrome">
     Chrome Web Store
   </a>
 
-  <a href="https://addons.mozilla.org/firefox/addon/npm-install-customizer/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/altpkg" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
     <img src="repo/firefox.png" width="50px" alt="Firefox">
     Firefox Add-ons
   </a>
 
-  <a href="https://microsoftedge.microsoft.com/addons/detail/npm-install-customizer/nhjgjjgjjgjgjgjgjgjgjgjg" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
     <img src="repo/edge.png" width="50px" alt="Edge">
-    Microsoft Edge Add-ons
-  </a>
-
+    Microsoft Edge Add-ons (not approved yet, but you can download and install manually from releases)
+  </div>
 </div>
+
+<br/>
+<br/>
+
+**Do not forget to rate the extension !! Helps a ton to get more visibility and feedback.**
 
 ## Build from source:
 
