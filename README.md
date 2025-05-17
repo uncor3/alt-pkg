@@ -47,10 +47,10 @@ Available on major browsers:
     Firefox Add-ons
   </a>
 
-  <div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <a href="https://microsoftedge.microsoft.com/addons/detail/altpkg/nlfbmcffgfpeojcemamhifjoaaihdoki" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
     <img src="repo/edge.png" width="50px" alt="Edge">
-    Microsoft Edge Add-ons (not approved yet, but you can download and install manually from releases)
-  </div>
+    Microsoft Edge Add-ons
+  </a>
 </div>
 
 <br/>
