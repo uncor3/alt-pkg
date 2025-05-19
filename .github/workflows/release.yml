@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Run tests
+        run: bun run test
+
       - name: Build
         run: bun wxt build -b firefox && bun wxt build -b chrome && bun wxt build -b edge
 
