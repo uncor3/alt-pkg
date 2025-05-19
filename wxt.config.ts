@@ -17,7 +17,7 @@ export default defineConfig({
         'A free and open-source extension to change the default install command on npmjs.com',
       short_name: 'AltPkg',
       name: 'AltPkg',
-      version: '1.0.0',
+      version: '1.1.0',
       icons: {
         16: '/icons/16.png',
         32: '/icons/32.png',
