@@ -1,4 +1,5 @@
 import init from './init';
+import { getList } from './popup/utils';
 
 export default defineContentScript({
   matches: ['https://www.npmjs.com/package/*'],
@@ -7,12 +8,13 @@ export default defineContentScript({
     const ui = createIntegratedUi(ctx, {
       position: 'inline',
       anchor: 'body',
-      onMount: () => {
+      onMount: async () => {
+        const pkgManagers = await getList();
         const mainContainer = document.querySelector('main > div');
         const handler = () => {
           const div = mainContainer?.children[3].querySelector('h3');
           if (div) {
-            init(div as HTMLElement);
+            init(div as HTMLElement, pkgManagers);
           }
         };
 

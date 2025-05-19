@@ -1,7 +1,6 @@
-import { getList } from './popup/utils';
+import { PkgManager } from './popup/types';
 
-async function init(prevElement: HTMLElement) {
-  const pkgManagers = await getList();
+async function init(prevElement: HTMLElement, pkgManagers: PkgManager[]) {
   const elementToClone = prevElement.nextSibling as HTMLElement;
   elementToClone.remove();
 
@@ -69,8 +68,16 @@ function highlightElement(element: HTMLElement, error?: Error) {
 
 function getPackageName() {
   const path = new URL(document.location.href).pathname;
-  const match = path.match(/^\/package\/(@?[^/?]+\/?[^/?]*)/);
-  return match ? match[1] : '';
+  const match = path.match(
+    /^\/package\/(@[^/]+\/[^/]+|[^/]+)(?:\/v\/([^/]+))?/,
+  );
+
+  if (!match) return '';
+
+  const packageName = match[1];
+  const version = match[2];
+
+  return version ? `${packageName}@${version}` : packageName;
 }
 
 export default init;
