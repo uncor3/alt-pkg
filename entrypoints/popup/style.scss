@@ -43,6 +43,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: inherit;
 }
 button:hover {
   border-color: #646cff;
@@ -173,7 +174,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 1.5rem;
 }
 
 .app-logo {
@@ -181,4 +182,10 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.version-info {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }

@@ -17,8 +17,8 @@ async function init(prevElement: HTMLElement, pkgManagers: PkgManager[]) {
     const newClone = elementToClone.cloneNode(true) as HTMLElement;
     newClone.setAttribute('alt-pkg', '');
     newClone.style.position = 'relative';
-    const code = newClone.querySelector('p > code')!;
-    const btn = newClone.querySelector('p > button')!;
+    const code = newClone.querySelector('p code')!;
+    const btn = newClone.querySelector('p button')!;
 
     const text = `${manager.name} ${manager.command} ${pkgName}`;
     btn.addEventListener('click', () => copyToClipboard(newClone, text));

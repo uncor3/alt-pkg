@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import List from './List.vue';
+const version =
+  typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : 'unknown';
 </script>
 
 <template>
@@ -11,6 +13,11 @@ import List from './List.vue';
         >Source code</a
       >
     </p>
+    <p>
+      Made by <a target="_blank" href="https://github.com/uncor3">uncore</a>
+    </p>
   </footer>
-  <p>Made by <a target="_blank" href="https://github.com/uncor3">uncore</a></p>
+  <div class="version-info">
+    <h3>v{{ version }}</h3>
+  </div>
 </template>
